@@ -22,6 +22,7 @@ class ProjetoController extends Controller
     {
         $validated = $request->validate([
             'nome' => 'required|max:255',
+            'descricao' => 'required|max:1020',
             'data_inicio' => 'required|date',
             'status' => 'required|in:Pendente,Em Andamento,Concluído',
         ]);
@@ -40,6 +41,7 @@ class ProjetoController extends Controller
     {
         $validated = $request->validate([
             'nome' => 'required|max:255',
+            'descricao' => 'required|max:1020',
             'data_inicio' => 'required|date',
             'status' => 'required|in:Pendente,Em Andamento,Concluído',
         ]);
@@ -53,5 +55,11 @@ class ProjetoController extends Controller
     {
         $projeto->delete();
         return redirect()->route('projetos.index')->with('success', 'Projeto excluído com sucesso!');
+    }
+
+    public function show($id)
+    {
+        $projeto = Projeto::findOrFail($id); // Busca o projeto pelo ID ou retorna erro 404
+        return view('projetos.show', compact('projeto')); // Retorna a view correta com os dados
     }
 }

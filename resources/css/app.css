@@ -2,3 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 @import "bootstrap/dist/css/bootstrap.min.css";
+
+.table-dark {
+    background-color: #17191b !important;
+    color: white !important;
+}
+
+.badge {
+    color: rgb(122, 102, 102);
+    padding: 5px;
+}
+
+.badge.bg-success {
+    background-color: #28a745;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107;
+}
+
+.badge.bg-secondary {
+    background-color: #6c757d;
+}
+
+
+.table-responsive {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+}

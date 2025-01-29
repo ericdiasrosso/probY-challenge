@@ -1,4 +1,7 @@
-<x-app-layout>
+@extends('layouts.app')  
+
+@section('content')
+
     <div class="container">
         <h2>Editar Perfil</h2>
 
@@ -44,7 +47,7 @@
             <button type="submit" class="btn btn-danger">Excluir Conta</button>
         </form>
     </div>
-</x-app-layout>
+@endsection
 
 @section('content')
 <div class="container">
